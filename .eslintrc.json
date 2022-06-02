@@ -25,6 +25,8 @@
         "no-use-before-define": "off",
         "react/react-in-jsx-scope": "off",
         "semi": ["error", "always"],
-        "space-before-function-paren": "off"
+        "space-before-function-paren": "off",
+        "camelcase": "off",
+        "no-unused-vars": "warn"
     }
 }
