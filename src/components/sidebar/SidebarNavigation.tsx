@@ -13,6 +13,26 @@ const SidebarNavigation: React.FC<SidebarNavProps> = ({ routes }) => {
   };
   const createLinks = (routes: SidebarLinks[]) => {
     return routes.map((prop, index) => {
+      if (prop.bottom) {
+        return (
+          <Button
+            key={index}
+            _hover={{ bg: 'transparent' }}
+            _active={{ bg: 'transparent' }}
+            _focus={{ borderColor: 'transparent' }}
+            gap="1.563rem"
+            leftIcon={prop.icon}
+            variant='ghost'
+            color= '#A2A4B9'
+            fontWeight='normal'
+            h="auto"
+            position="absolute"
+            bottom="0"
+          >
+            {prop.name}
+          </Button>
+        );
+      };
       return (
         <NavLink to={'/admin' + prop.path} key={index}>
           <Button
@@ -34,7 +54,7 @@ const SidebarNavigation: React.FC<SidebarNavProps> = ({ routes }) => {
   };
   const links = <>{createLinks(routes)}</>;
   return (
-    <VStack alignItems="flex-start" spacing="1.75rem">
+    <VStack alignItems="flex-start" spacing="1.75rem" position="relative" h="inherit">
       {links}
     </VStack>
   );
