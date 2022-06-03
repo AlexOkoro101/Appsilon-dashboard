@@ -1,38 +1,15 @@
 import { Button, VStack } from '@chakra-ui/react';
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Route as SidebarLinks } from '../../types/models';
-interface SidebarNavProps {
+import { activeRoute } from '../../utils/useActiveRoute';
+interface NavProps {
   routes: SidebarLinks[]
 };
 
-const SidebarNavigation: React.FC<SidebarNavProps> = ({ routes }) => {
-  const location = useLocation();
-  const activeRoute = (routeName: string) => {
-    return location.pathname === routeName;
-  };
+const SidebarNavigation: React.FC<NavProps> = ({ routes }) => {
   const createLinks = (routes: SidebarLinks[]) => {
     return routes.map((prop, index) => {
-      if (prop.bottom) {
-        return (
-          <Button
-            key={index}
-            _hover={{ bg: 'transparent' }}
-            _active={{ bg: 'transparent' }}
-            _focus={{ borderColor: 'transparent' }}
-            gap="1.563rem"
-            leftIcon={prop.icon}
-            variant='ghost'
-            color= '#A2A4B9'
-            fontWeight='normal'
-            h="auto"
-            position="absolute"
-            bottom="0"
-          >
-            {prop.name}
-          </Button>
-        );
-      };
       return (
         <NavLink to={'/admin' + prop.path} key={index}>
           <Button

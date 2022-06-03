@@ -21,7 +21,7 @@ const dashboardRoutes: Route[] = [
   },
   {
     path: '/policy',
-    name: 'Poliicy',
+    name: 'Policy',
     icon: <Icon as={BsShieldLock} fontSize="1.25rem" />,
     component: <Policy />,
     bottom: false

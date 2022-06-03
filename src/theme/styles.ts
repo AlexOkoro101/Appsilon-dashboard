@@ -25,7 +25,8 @@ export const globalStyles = {
     global: () => ({
       body: {
         fontFamily: 'Segoe UI',
-        color: '#42474A'
+        color: '#42474A',
+        bg: '#F4F5F9'
       },
       html: {
         fontFamily: 'Segoe UI'
